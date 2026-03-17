@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cream: #faf6f0;
+  --gold: #c9a962;
+  --gold-light: #e8dcc8;
+  --rose: #d4a5a5;
+  --text: #2c2420;
+  --text-soft: #5c534d;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23c9a962'%3E%3Cpath d='M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7z'/%3E%3C/svg%3E") 12 12, auto;
+}
+
+a, button, [role="button"], .book-photo-wrap {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='%23a68b40'%3E%3Cpath d='M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7z'/%3E%3C/svg%3E") 14 14, pointer;
+}
+
+h1, h2 {
+  font-family: 'Cormorant Garamond', serif;
+}

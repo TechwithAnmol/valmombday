@@ -1,0 +1,17 @@
+.cursor-attractor {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.cursor-attractor-particle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background: hsl(var(--particle-hue, 45) 35% 88%);
+  box-shadow: 0 0 10px hsl(45 30% 85% / 0.4);
+  will-change: transform;
+}

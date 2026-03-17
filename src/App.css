@@ -1,0 +1,131 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 100;
+  background: linear-gradient(to bottom, var(--cream) 60%, transparent);
+}
+
+.lang-toggle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-soft);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem 0.5rem;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s ease;
+}
+.lang-toggle:hover {
+  transform: scale(1.08);
+}
+
+.lang-toggle .sep {
+  margin: 0 0.25rem;
+  opacity: 0.5;
+}
+
+.lang-toggle .active {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.lang-toggle:hover .active,
+.lang-toggle:hover span:not(.sep) {
+  color: var(--text);
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+  padding: 6rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.hero-label {
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  transition: letter-spacing 0.3s ease, opacity 0.3s ease;
+}
+.hero:hover .hero-label {
+  letter-spacing: 0.35em;
+  opacity: 0.95;
+}
+
+.hero-name {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.hero:hover .hero-name {
+  transform: scale(1.02);
+  text-shadow: 0 2px 20px rgba(201, 169, 98, 0.2);
+}
+
+.hero-subtitle {
+  margin-top: 0.75rem;
+  color: var(--text-soft);
+  font-weight: 300;
+  font-size: 1.05rem;
+  transition: color 0.3s ease;
+}
+.hero:hover .hero-subtitle {
+  color: var(--text);
+}
+
+.photobook-section {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  padding: 2rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photobook-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 2rem;
+  font-style: italic;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.photobook-section:hover .photobook-title {
+  transform: scale(1.02);
+  color: var(--gold);
+}
+
+.footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.footer:hover {
+  color: var(--rose);
+  transform: scale(1.02);
+}
