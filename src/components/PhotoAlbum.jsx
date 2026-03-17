@@ -122,9 +122,12 @@ function PhotoAlbum({ title, photoPlaceholder, clickToOpen = 'Click to open', cl
     return (
       <div className="book-closed-wrapper">
         <button type="button" className="book-closed" onClick={openBook} aria-label="Open book">
-          <div className="book-cover">
-            <span className="book-cover-title">{title}</span>
-            <span className="book-cover-hint">{clickToOpen}</span>
+          <div className="book-closed-3d">
+            <div className="book-spine-edge" />
+            <div className="book-cover">
+              <span className="book-cover-title">{title}</span>
+              <span className="book-cover-hint">{clickToOpen}</span>
+            </div>
           </div>
         </button>
       </div>

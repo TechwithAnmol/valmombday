@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   padding: 1rem 0;
+  perspective: 1400px;
 }
 
 .book-closed {
@@ -11,39 +12,56 @@
   background: none;
   cursor: pointer;
   padding: 0;
-  perspective: 1200px;
+}
+
+.book-closed-3d {
+  display: flex;
+  transform-style: preserve-3d;
+  transform: rotateY(-8deg) rotateX(2deg);
+  transition: transform 0.35s ease, filter 0.35s ease;
+  filter: drop-shadow(6px 12px 24px rgba(0,0,0,0.2));
+}
+.book-closed:hover .book-closed-3d {
+  transform: rotateY(-4deg) rotateX(1deg) scale(1.02);
+  filter: drop-shadow(8px 16px 32px rgba(0,0,0,0.25));
+}
+
+.book-spine-edge {
+  width: 18px;
+  flex-shrink: 0;
+  background: linear-gradient(90deg, #8b7340 0%, #a68b40 25%, #b89850 70%, var(--gold) 100%);
+  border-radius: 3px 0 0 3px;
+  box-shadow: inset 2px 0 4px rgba(0,0,0,0.2);
 }
 
 .book-cover {
-  width: 280px;
-  min-height: 340px;
-  background: linear-gradient(145deg, #d4b876 0%, var(--gold) 30%, #a68b40 100%);
-  border-radius: 4px 8px 8px 4px;
-  box-shadow: 4px 4px 20px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.3);
-  padding: 2.5rem 1.5rem;
+  width: 220px;
+  min-height: 300px;
+  background: linear-gradient(160deg, #c9a962 0%, var(--gold) 25%, #b89850 60%, #a68b40 100%);
+  border-radius: 0 12px 12px 0;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.35), inset -1px 0 0 rgba(0,0,0,0.08);
+  padding: 2rem 1.5rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-origin: left center;
-  border: 1px solid rgba(0,0,0,0.1);
-}
-
-.book-closed:hover .book-cover {
-  transform: scale(1.02);
-  box-shadow: 6px 6px 28px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-left: none;
 }
 
 .book-cover-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-style: italic;
   color: #2c2420;
   display: block;
 }
 
 .book-cover-hint {
-  font-size: 0.8rem;
-  color: rgba(44,36,32,0.7);
-  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  color: rgba(44,36,32,0.75);
+  margin-top: 0.6rem;
   display: block;
 }
 
@@ -347,8 +365,30 @@
   .book-flip {
     width: 320px;
   }
+  .book-closed-3d {
+    transform: rotateY(-6deg) rotateX(1deg);
+  }
   .book-cover {
-    width: 240px;
-    min-height: 300px;
+    width: 200px;
+    min-height: 280px;
+    padding: 1.5rem 1rem;
+  }
+  .book-spine-edge {
+    width: 14px;
+  }
+  .book-nav {
+    width: 44px;
+    height: 44px;
+  }
+  .book-close-btn,
+  .book-last-spread-replay {
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+  }
+  .book-lightbox-close {
+    width: 48px;
+    height: 48px;
+    top: 0.75rem;
+    right: 1rem;
   }
 }
