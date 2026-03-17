@@ -3,7 +3,7 @@ import { pictureFilenames } from '../pictureList'
 import './PhotoAlbum.css'
 
 const IMAGES_PER_SIDE = 3
-const IMAGE_BASE = '/pictures'
+const IMAGE_BASE = `${import.meta.env.BASE_URL}pictures`
 
 function PhotoAlbum({ title, photoPlaceholder, clickToOpen = 'Click to open', closeBookLabel = 'Close book' }) {
   const [isOpen, setIsOpen] = useState(false)
