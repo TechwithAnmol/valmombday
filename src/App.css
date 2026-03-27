@@ -18,7 +18,7 @@
 
 .pull-switch-text {
   position: absolute;
-  bottom: -0.1rem;
+  top: -0.6rem;
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.68rem;
@@ -230,6 +230,9 @@
     height: 218px;
     left: 0.45rem;
     top: 0.55rem;
+  }
+  .pull-switch-text {
+    top: -0.8rem;
   }
 
   .header {
