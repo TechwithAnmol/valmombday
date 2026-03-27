@@ -4,16 +4,19 @@ import { translations } from './translations'
 import PhotoAlbum from './components/PhotoAlbum'
 import Sparkles from './components/Sparkles'
 import CursorAttractor from './components/CursorAttractor'
+import PullSwitch3D from './components/PullSwitch3D'
 import './App.css'
 
 function App() {
   const [lang, setLang] = useState('en')
+  const [projectorMode, setProjectorMode] = useState(false)
   const t = translations[lang]
 
   return (
-    <div className="app">
+    <div className={`app ${projectorMode ? 'lights-off' : ''}`}>
       <CursorAttractor className="cursor-attractor-bg" />
       <Sparkles />
+      {!projectorMode && <PullSwitch3D onPulled={() => setProjectorMode(true)} />}
       <header className="header">
         <button
           className="lang-toggle"
@@ -40,6 +43,30 @@ function App() {
       <footer className="footer">
         <p>♥ {new Date().getFullYear()}</p>
       </footer>
+
+      {projectorMode && (
+        <div className="projector-mode">
+          <div className="projector-stage">
+            <img
+              src={`${import.meta.env.BASE_URL}pictures/projector.jpg`}
+              alt="Projector"
+              className="projector-image"
+            />
+            <div className="projector-screen">
+              <video
+                className="projector-video"
+                src={`${import.meta.env.BASE_URL}videos/val'swish.mp4`}
+                controls
+                autoPlay
+                playsInline
+              />
+            </div>
+          </div>
+          <button className="projector-close" onClick={() => setProjectorMode(false)}>
+            Turn lights on
+          </button>
+        </div>
+      )}
     </div>
   )
 }
