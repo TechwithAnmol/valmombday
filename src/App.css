@@ -14,6 +14,13 @@
   height: 280px;
   z-index: 110;
   pointer-events: auto;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.pull-switch-wrap canvas {
+  touch-action: none;
 }
 
 .pull-switch-text {
