@@ -7,10 +7,14 @@ import CursorAttractor from './components/CursorAttractor'
 import PullSwitch3D from './components/PullSwitch3D'
 import './App.css'
 
+const projectorVideos = ["val'swish.mp4", "nat's wish.mp4"]
+
 function App() {
   const [lang, setLang] = useState('en')
   const [projectorMode, setProjectorMode] = useState(false)
+  const [projectorVideoIndex, setProjectorVideoIndex] = useState(0)
   const t = translations[lang]
+  const activeVideo = `${import.meta.env.BASE_URL}videos/${encodeURIComponent(projectorVideos[projectorVideoIndex])}`
 
   return (
     <div className={`app ${projectorMode ? 'lights-off' : ''}`}>
@@ -54,12 +58,29 @@ function App() {
             />
             <div className="projector-screen">
               <video
+                key={activeVideo}
                 className="projector-video"
-                src={`${import.meta.env.BASE_URL}videos/val'swish.mp4`}
+                src={activeVideo}
                 controls
                 autoPlay
                 playsInline
               />
+              <button
+                type="button"
+                className="projector-nav projector-prev"
+                onClick={() => setProjectorVideoIndex((i) => (i - 1 + projectorVideos.length) % projectorVideos.length)}
+                aria-label="Previous video"
+              >
+                Prev
+              </button>
+              <button
+                type="button"
+                className="projector-nav projector-next"
+                onClick={() => setProjectorVideoIndex((i) => (i + 1) % projectorVideos.length)}
+                aria-label="Next video"
+              >
+                Next
+              </button>
             </div>
           </div>
           <button className="projector-close" onClick={() => setProjectorMode(false)}>

@@ -219,6 +219,32 @@
   background: #000;
 }
 
+.projector-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 58px;
+  min-height: 44px;
+  border: none;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  z-index: 3;
+  cursor: pointer;
+  backdrop-filter: blur(3px);
+}
+
+.projector-prev {
+  left: 0.7rem;
+}
+
+.projector-next {
+  right: 0.7rem;
+}
+
 .projector-close {
   position: absolute;
   top: 1.2rem;
@@ -277,6 +303,21 @@
     top: 16%;
     left: 4%;
     width: min(72vw, 540px);
+  }
+
+  .projector-nav {
+    min-width: 52px;
+    min-height: 44px;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.78rem;
+  }
+
+  .projector-prev {
+    left: 0.45rem;
+  }
+
+  .projector-next {
+    right: 0.45rem;
   }
 }
 
